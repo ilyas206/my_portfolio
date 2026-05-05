@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ArrowRight } from 'lucide-react'
 import PageReveal from './PageReveal'
+import FillButton from './FillButton'
 
 const TITLE = 'Built right. By Σlyas'
 
@@ -43,7 +44,6 @@ export default function Hero() {
           opacity: 1,
           y: 0,
           duration: 0.7,
-          stagger: 0.2,
           ease: 'power2.out',
         })
       }
@@ -58,7 +58,7 @@ export default function Hero() {
 
       <section
         id="hero"
-        className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-(--bg-primary)"
+        className="relative w-full h-screen flex items-center justify-center overflow-hidden"
       >
         {/* Glow */}
         <div
@@ -98,27 +98,27 @@ export default function Hero() {
           </h1>
 
           {/* Tagline */}
-          <p
-            className="hero-sub text-md md:text-xl max-w-xl font-light leading-relaxed"
-            style={{ color: 'var(--text-secondary)' }}
-          >
-            Building clean, scalable web applications —
-            from pixel-perfect interfaces to solid backend systems.
-          </p>
+          <div className='hero-sub flex flex-col items-center gap-4'>
+            <p
+              className="text-md md:text-xl max-w-xl font-thin leading-relaxed"
+              style={{ color: 'var(--text-secondary)' }}
+            >
+              Building clean, scalable web applications —
+              from pixel-perfect interfaces to solid backend systems.
+            </p>
 
-          {/* CTA Button */}
-          <a
-            href="#projects"
-            className="hero-sub group mt-2 px-8 py-3 rounded-md text-sm font-semibold flex items-center gap-2  border border-(--accent) text-(--accent) hover:bg-(--accent) hover:text-black transition-all duration-300 ease-in-out"
-          >
-            <span className="transition-transform duration-300 group-hover:-translate-x-1">
-              View My Work
-            </span>
-            <ArrowRight
-              size={16}
-              className="transition-all duration-300 group-hover:translate-x-1"
-            />
-          </a>
+            {/* CTA Button */}
+            <FillButton href="#projects" fillColor='var(--accent)' borderColor='var(--accent)' paddingX="14px" paddingY="15px">
+              <span className="flex items-center gap-2 overflow-hidden">
+                <span className="transition-transform duration-300 group-hover:translate-x-28">
+                  <ArrowRight size={16}/>
+                </span>
+                <span className="transition-transform duration-300 group-hover:-translate-x-6">
+                  View My Works
+                </span>
+              </span>
+            </FillButton>
+          </div>
         </div>
 
         {/* Bottom fade */}

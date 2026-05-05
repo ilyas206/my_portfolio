@@ -12,6 +12,8 @@ html {
   --accent-hover: #00b8d9;
   --text-primary: #f0f0f0;
   --text-secondary: #a0a0a0;
+  --text-success : #34d399;
+  --text-error : #f87171;
   --border: #2a2a2a;
 }
 
@@ -19,6 +21,13 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: 'Onest', sans-serif;
+  color : #374bff
+}
+
+.quote {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+  font-style: normal;
 }
 
 /* Custom scrollbar */
@@ -31,4 +40,15 @@ body {
 ::-webkit-scrollbar-thumb {
   background: var(--accent);
   border-radius: 10px;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes travel-border {
+  0%   { --angle: 0deg; }
+  100% { --angle: 360deg; }
 }

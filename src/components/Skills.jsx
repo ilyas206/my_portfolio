@@ -29,7 +29,7 @@ function SkillCard({ name, icon }) {
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative flex flex-col items-center justify-center gap-3 rounded-xl border border-(--border) bg-(--bg-card) transition-colors duration-300 overflow-hidden cursor-default"
+      className="skill-card relative flex flex-col items-center justify-center gap-3 rounded-xl border border-(--border) bg-(--bg-card) transition-colors duration-300 overflow-hidden cursor-default"
       style={{ minWidth: '170px', height: '160px', padding: '20px 16px' }}
     >
       {/* Per-card spotlight */}
@@ -49,14 +49,14 @@ function SkillCard({ name, icon }) {
       {/* Icon */}
       <div className="relative z-10">
         <i
-        className={`${icon} text-4xl md:text-5xl`}
+        className={`${icon} text-5xl`}
         style={{ filter: 'grayscale(100%) brightness(0.85)', color: 'var(--text-secondary)' }}
         />
       </div>
 
       {/* Name */}
       <span
-        className="relative z-10 text-xs md:text-sm text-center text-(--text-secondary)"
+        className="relative z-10 text-sm text-center text-(--text-secondary)"
         style={{ lineHeight: '1.3' }}
       >
         {name}
@@ -73,10 +73,21 @@ export default function Skills() {
     gsap.fromTo('.skills-header',
       { opacity: 0, y: 30 },
       {
-        opacity: 1, y: 0, duration: 0.7, ease: 'power2.out',
-        scrollTrigger: { trigger: '#skills', start: 'top 35%'}
+        opacity: 1, y: 0,
+        scrollTrigger: { trigger: '#skills', start: 'top 65%', end: 'top 50%', scrub: true}
       }
     )
+
+    gsap.utils.toArray('.skill-card').forEach(card => {
+      gsap.fromTo(card,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1, y: 0,
+          scrollTrigger: { trigger: card, start: 'top 85%', end: 'center 70%', scrub: true }
+        }
+      )
+    })
+
   }, [])
 
   useEffect(() => {
@@ -113,9 +124,8 @@ export default function Skills() {
         </h2>
       </div>
 
-      {/* Carousel */}
-      <div
-        className="relative w-full overflow-hidden mt-10"
+      {/* Carousel - DESKTOP */}
+      <div className="relative w-full overflow-hidden mt-10 hidden md:block"
         onMouseEnter={() => tweenRef.current?.pause()}
         onMouseLeave={() => tweenRef.current?.resume()}
       >
@@ -140,6 +150,15 @@ export default function Skills() {
             <SkillCard key={`${name}-${i}`} name={name} icon={icon} />
           ))}
         </div>
+      </div>
+
+      {/* List - Mobile */}
+      <div className="grid grid-cols-2 gap-y-4 gap-x-2 mx-auto w-9/10 overflow-hidden md:hidden">
+          {
+            skillsData?.map(({ name, icon }, i) => {
+              return <SkillCard key={`${name}-${i}`} name={name} icon={icon} />
+            })
+          }
       </div>
     </section>
   )

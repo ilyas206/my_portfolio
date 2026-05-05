@@ -19,7 +19,7 @@ export default function PageReveal({ onComplete }) {
       stagger: 0.05,
       ease: 'power4.inOut',
       transformOrigin: 'bottom center',
-      delay: 0.2,
+      delay: 0.5,
     })
   }, [onComplete])
 

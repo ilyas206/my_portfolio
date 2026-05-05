@@ -1,11 +1,18 @@
 import About from './components/About'
+import Contact from './components/Contact'
+import Education from './components/Education'
+import Footer from './components/Footer'
 import Hero from './components/Hero'
 import Navbar from './components/Navbar'
+import Projects from './components/Projects'
 import Skills from './components/Skills'
+import StarField from './components/StarField'
 
 function App() {
+
   return (
-    <div>
+    <div className='overflow-hidden'>
+      <StarField/>
       <Navbar />
       <section id="hero">
         <Hero/>
@@ -16,9 +23,16 @@ function App() {
       <section id="skills">
         <Skills/>
       </section>
-      <section id="projects"   style={{ minHeight: '100vh', padding: '80px 20px' }}><h2 style={{color:'var(--text-primary)'}}>Projects</h2></section>
-      <section id="education" style={{ minHeight: '100vh', padding: '80px 20px' }}><h2 style={{color:'var(--text-primary)'}}>Education</h2></section>
-      <section id="contact"    style={{ minHeight: '100vh', padding: '80px 20px' }}><h2 style={{color:'var(--text-primary)'}}>Contact</h2></section>
+      <section id="projects">
+        <Projects/>
+      </section>
+      <section id="education">
+        <Education/>
+      </section>
+      <section id="contact">
+        <Contact/>
+      </section>
+      <Footer/>
     </div>
   )
 }
