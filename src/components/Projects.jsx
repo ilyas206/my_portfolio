@@ -7,6 +7,24 @@ import FillButton from './FillButton'
 
 gsap.registerPlugin(ScrollTrigger)
 
+function NoProjects(){
+  return (
+    <div
+      className="relative rounded-2xl overflow-hidden border p-8"
+      style={{
+        backgroundColor: 'var(--bg-card)',
+        color : 'var(--accent)'
+      }}
+    >
+      <h3
+        className="text-xl font-light text-center text-(--text-primary)"
+      >
+        Projects coming soon !
+      </h3>
+    </div>
+  )
+}
+
 function ProjectCard({ title, description, tech, accentColor, siteUrl, repoUrl, screenshot }) {
   return (
     <div
@@ -183,11 +201,19 @@ export default function Projects() {
 
         {/* Cards */}
         <div className="flex flex-col gap-6">
-          {projectsData.map(project => (
-            <div key={project.title} className="project-card">
-              <ProjectCard {...project} />
-            </div>
-          ))}
+          {
+            projectsData.length > 0 ?
+            <>
+              {projectsData.map(project => (
+              <div key={project.title} className="project-card">
+                <ProjectCard {...project} />
+              </div>
+            ))}
+            </> :
+            <>
+              <NoProjects />
+            </>
+          }
         </div>
 
       </div>
