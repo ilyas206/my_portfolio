@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const track = [...skillsData, ...skillsData]
 
-function SkillCard({ name, icon }) {
+function SkillCard({ name, icon, cardMinWidth, cardMinHeight }) {
   const cardRef      = useRef(null)
   const spotlightRef = useRef(null)
 
@@ -30,7 +30,7 @@ function SkillCard({ name, icon }) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className="skill-card relative flex flex-col items-center justify-center gap-3 rounded-xl border border-(--border) bg-(--bg-card) transition-colors duration-300 overflow-hidden cursor-default"
-      style={{ minWidth: '170px', height: '160px', padding: '20px 16px' }}
+      style={{ minWidth: cardMinWidth, height: cardMinHeight, padding: '20px 16px' }}
     >
       {/* Per-card spotlight */}
       <div
@@ -49,7 +49,7 @@ function SkillCard({ name, icon }) {
       {/* Icon */}
       <div className="relative z-10">
         <i
-        className={`${icon} text-5xl`}
+        className={`${icon} text-4xl md:text-6xl`}
         style={{ filter: 'grayscale(100%) brightness(0.85)', color: 'var(--text-secondary)' }}
         />
       </div>
@@ -147,7 +147,7 @@ export default function Skills() {
           style={{ gap: '12px', paddingInline: '40px' }}
         >
           {track.map(({ name, icon }, i) => (
-            <SkillCard key={`${name}-${i}`} name={name} icon={icon} />
+            <SkillCard key={`${name}-${i}`} name={name} icon={icon} cardMinWidth='170px' cardMinHeight='160px' />
           ))}
         </div>
       </div>
@@ -156,7 +156,7 @@ export default function Skills() {
       <div className="grid grid-cols-2 gap-y-4 gap-x-2 mx-auto w-9/10 overflow-hidden md:hidden">
           {
             skillsData?.map(({ name, icon }, i) => {
-              return <SkillCard key={`${name}-${i}`} name={name} icon={icon} />
+              return <SkillCard key={`${name}-${i}`} name={name} icon={icon} cardMinWidth='120px' cardMinHeight='150px' />
             })
           }
       </div>
