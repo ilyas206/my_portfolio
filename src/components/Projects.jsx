@@ -53,7 +53,7 @@ function ProjectCard({ title, description, tech, accentColor, siteUrl, repoUrl, 
       <div className="flex flex-col md:flex-row gap-0">
 
         {/* LEFT — Content */}
-        <div className="flex-1 flex flex-col gap-5 p-8">
+        <div className="flex-1 flex flex-col gap-5 p-8 text-center md:text-left">
 
           {/* Title */}
           <h3
@@ -72,7 +72,7 @@ function ProjectCard({ title, description, tech, accentColor, siteUrl, repoUrl, 
           </p>
 
           {/* Tech stack */}
-          <div className=" w-4/5 mx-auto md:w-full flex flex-col items-center md:items-start gap-2">
+          <div className="w-full mx-auto flex flex-col items-center md:items-start gap-2">
             <span
               className="text-xs font-semibold uppercase tracking-widest"
               style={{ color: accentColor }}
@@ -99,7 +99,7 @@ function ProjectCard({ title, description, tech, accentColor, siteUrl, repoUrl, 
 
           {/* Links */}
           <div className="flex items-center gap-3 justify-center md:justify-start mt-auto pt-2">
-            <FillButton buttonClass='group' href={siteUrl} target="_blank" rel="noopener noreferrer" paddingX='8px' paddingY='13px' fillColor={accentColor} textColor="#0a0a0a" borderColor={accentColor}>
+            <FillButton buttonClass='group' href={siteUrl} target="_blank" rel="noopener noreferrer" paddingX='8px' paddingY='8px' fillColor={accentColor} textColor="#0a0a0a" borderColor={accentColor}>
                 <span className="flex items-center gap-2 overflow-hidden">
                   <span className="transition-transform duration-300 group-hover:translate-x-17">
                     <ExternalLink size={14} />
@@ -109,7 +109,7 @@ function ProjectCard({ title, description, tech, accentColor, siteUrl, repoUrl, 
                   </span>
                 </span>
             </FillButton>
-            <FillButton buttonClass='group' href={repoUrl} target="_blank" rel="noopener noreferrer" paddingX='8px' paddingY='13px' fillColor={accentColor} textColor="#0a0a0a" borderColor={accentColor}>
+            <FillButton buttonClass='group' href={repoUrl} target="_blank" rel="noopener noreferrer" paddingX='8px' paddingY='8px' fillColor={accentColor} textColor="#0a0a0a" borderColor={accentColor}>
                 <span className="flex items-center gap-2 overflow-hidden">
                   <i className="transition-transform duration-300 group-hover:translate-x-23 devicon-github-original" />
                   <span className="transition-transform duration-300 group-hover:-translate-x-5">
