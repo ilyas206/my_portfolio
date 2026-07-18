@@ -1,5 +1,6 @@
 import { skillsData } from "./skills";
 import project1 from '../assets/images/project1.png';
+import project2 from '../assets/images/project2.png';
 
 export const projectsData = [
   {
@@ -11,5 +12,15 @@ export const projectsData = [
     siteUrl: 'https://splentra.netlify.app',
     repoUrl: 'https://github.com/ilyas206/Splentra-Expense-Splitting',
     screenshot: project1,    
+  },
+  {
+    title: 'SIRAJ | Light of Guidance',
+    description:
+      'SIRAJ is a modern, multilingual Islamic guidance web app that helps users access important religious and spiritual resources in one place without the hassle of searching through multiple sources. It solves the common problem of finding clear, organized information about daily worship, fasting, Islamic names of Allah, and knowledge about notable scholars in a simple and engaging experience. Built for the Ummah, it offers a free, user-friendly platform that makes Islamic learning and daily guidance more accessible, meaningful, and easy to explore.',
+    tech: [skillsData[3], skillsData[4], skillsData[11]],
+    accentColor: '#94A3B8',    
+    siteUrl: 'https://siraj-light.netlify.app',
+    repoUrl: 'https://github.com/ilyas206/SIRAJ',
+    screenshot: project2,    
   }
 ]
