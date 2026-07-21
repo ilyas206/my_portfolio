@@ -4,7 +4,7 @@ export const educationData = [
     field: 'Physical Sciences — French Track (BIOF)',
     institution: 'High school OUM ELBANIN',
     location: 'Casablanca, Morocco',
-    period: '2022 — 2023',
+    period: 'Sep 2022 - Jun 2023',
     status: 'Completed',
     description:
         'Completed a rigorous scientific curriculum with core subjects — Physics, Chemistry, and Mathematics — taught entirely in French. Developed strong analytical and problem-solving foundations that directly support structured thinking in software development.',
@@ -20,7 +20,7 @@ export const educationData = [
     field: 'Digital Development — Web Full-Stack',
     institution: 'CMFP LALLA AICHA (OFPPT)',
     location: 'Casablanca, Morocco',
-    period: '2023 — 2025',
+    period: 'Sep 2023 - Jun 2025',
     status: 'Completed',
     description:
       'Two-year vocational program focused on building production-ready web applications. Covered the full development lifecycle — from frontend interfaces and backend APIs to database management, cloud-native deployment, and professional project delivery using agile methods.',
@@ -36,8 +36,8 @@ export const educationData = [
     field: 'Computer Engineering (Génie Informatique)',
     institution: 'HIGH TECH (Private school)',
     location: 'Rabat, Morocco (Remote)',
-    period: '2025 - Present',
-    status: 'In Progress',
+    period: 'Oct 2025 - Jul 2026',
+    status: 'Completed',
     description:
         'University-level program covering core computer engineering disciplines — object-oriented programming, advanced databases, networking, and web development. Builds on prior full-stack experience with deeper coverage of systems, security, and data fundamentals.',
     highlights: [

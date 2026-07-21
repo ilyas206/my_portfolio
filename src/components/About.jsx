@@ -66,7 +66,7 @@ export default function About() {
             <p className="text-base md:text-lg text-center md:text-start leading-relaxed max-w-lg text-(--text-secondary)">
               I'm{' '}
               <span className="font-semibold text-(--accent)">Ilyas AIT IDIR</span>
-              {' '}— a 3rd-year Computer Engineering student with a sharp focus on
+              {' '}— a Computer Engineering graduate of my 3rd year, with a sharp focus on
               full-stack web development. I don't just connect a frontend to a backend —
               I build{' '}
               <span className="font-semibold text-(--text-primary)">structured</span>,{' '}
