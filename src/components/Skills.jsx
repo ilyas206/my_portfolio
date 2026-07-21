@@ -50,7 +50,7 @@ function SkillCard({ name, icon, cardMinWidth, cardMinHeight }) {
       <div className="relative z-10">
         <i
         className={`${icon} text-4xl md:text-6xl`}
-        style={{ filter: 'grayscale(100%) brightness(0.85)', color: 'var(--text-secondary)' }}
+        style={{ filter: 'grayscale(20%) brightness(0.85)', color: 'var(--accent)' }}
         />
       </div>
 
