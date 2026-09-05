@@ -101,10 +101,10 @@ function ProjectCard({ title, description, tech, accentColor, demoVideo, repoUrl
           </div>
 
           {/* Links */}
-          <div className="flex items-center gap-3 justify-center md:justify-start mt-auto pt-2">
+          <div className="flex flex-col md:flex-row gap-2">
             <FillButton buttonClass='group' onClick={() => setShowVideo(!showVideo)} rel="noopener noreferrer" paddingX='8px' paddingY='8px' fillColor={accentColor} textColor="#0a0a0a" borderColor={accentColor}>
                 <span className="flex items-center gap-2 overflow-hidden">
-                  <span className={`transition-transform duration-300 group-hover:translate-x-${showVideo ? '20' : '22'}`}>
+                  <span className="transition-transform duration-300 group-hover:translate-x-21">
                     <Play size={14} />
                   </span>
                   <span className="transition-transform duration-300 group-hover:-translate-x-5.5">
