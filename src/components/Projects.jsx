@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ExternalLink, Monitor } from 'lucide-react'
+import { Play } from 'lucide-react'
 import { projectsData } from '../data/projects'
 import FillButton from './FillButton'
 
@@ -25,7 +25,10 @@ function NoProjects(){
   )
 }
 
-function ProjectCard({ title, description, tech, accentColor, siteUrl, repoUrl, screenshot }) {
+function ProjectCard({ title, description, tech, accentColor, demoVideo, repoUrl, screenshot }) {
+
+  const [showVideo, setShowVideo] = useState(false)
+
   return (
     <div
       className="relative rounded-2xl overflow-hidden border"
@@ -99,13 +102,13 @@ function ProjectCard({ title, description, tech, accentColor, siteUrl, repoUrl, 
 
           {/* Links */}
           <div className="flex items-center gap-3 justify-center md:justify-start mt-auto pt-2">
-            <FillButton buttonClass='group' href={siteUrl} target="_blank" rel="noopener noreferrer" paddingX='8px' paddingY='8px' fillColor={accentColor} textColor="#0a0a0a" borderColor={accentColor}>
+            <FillButton buttonClass='group' onClick={() => setShowVideo(!showVideo)} rel="noopener noreferrer" paddingX='8px' paddingY='8px' fillColor={accentColor} textColor="#0a0a0a" borderColor={accentColor}>
                 <span className="flex items-center gap-2 overflow-hidden">
-                  <span className="transition-transform duration-300 group-hover:translate-x-17">
-                    <ExternalLink size={14} />
+                  <span className={`transition-transform duration-300 group-hover:translate-x-${showVideo ? '20' : '22'}`}>
+                    <Play size={14} />
                   </span>
                   <span className="transition-transform duration-300 group-hover:-translate-x-5.5">
-                    Visit Site
+                    {showVideo ? 'Hide' : 'Show'} Demo
                   </span>
                 </span>
             </FillButton>
@@ -125,38 +128,33 @@ function ProjectCard({ title, description, tech, accentColor, siteUrl, repoUrl, 
           className="md:w-85 shrink-0 flex items-center justify-center p-6"
           style={{ backgroundColor: `${accentColor}08` }}
         >
-          {screenshot ? (
-            <img
-              src={screenshot}
-              alt={`${title} screenshot`}
-              className="rounded-xl w-full object-cover shadow-lg"
-              style={{ border: `1px solid ${accentColor}30` }}
-            />
-          ) : (
-            <div
-              className="w-full h-48 md:h-full min-h-45 rounded-xl flex flex-col items-center justify-center gap-3"
-              style={{
-                border: `1px dashed ${accentColor}40`,
-                backgroundColor: `${accentColor}06`,
-              }}
-            >
-              <Monitor size={32} style={{ color: accentColor, opacity: 0.5 }} />
-              <span
-                className="text-xs"
-                style={{ color: accentColor, opacity: 0.5 }}
-              >
-                Screenshot coming soon
-              </span>
-            </div>
-          )}
+          {
+            showVideo ? (
+              <video 
+                controls 
+                className='rounded-xl'
+                style={{ border: `1px solid ${accentColor}30` }}>
+                <source src={demoVideo} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            ) : (
+              screenshot && 
+              <img
+                src={screenshot}
+                alt={`${title} screenshot`}
+                className="rounded-xl w-full object-cover shadow-lg"
+                style={{ border: `1px solid ${accentColor}30` }}
+              />
+            )
+          }
         </div>
-
       </div>
     </div>
   )
 }
 
 export default function Projects() {
+
   useEffect(() => {
     gsap.fromTo('.projects-header',
       { opacity: 0, y: 30 },
