@@ -1,6 +1,7 @@
 import { skillsData } from "./skills";
 import project1 from '../assets/images/project1.png';
 import project2 from '../assets/images/project2.png';
+import project3 from '../assets/images/project3.png';
 
 export const projectsData = [
   {
@@ -22,5 +23,15 @@ export const projectsData = [
     demoVideo: '/videos/SIRAJ.mp4',
     repoUrl: 'https://github.com/ilyas206/SIRAJ',
     screenshot: project2,    
+  },
+  {
+    title: 'Tradezy | Multi-Vendor Marketplace',
+    description:
+      'Tradezy is a full-stack multi-vendor e-commerce platform connecting independent sellers with buyers in one marketplace. It solves the challenge of running a trustworthy, role-based commerce system — sellers apply and get admin-approved before selling, buyers browse and purchase with stock-safe checkout, and admins moderate the entire marketplace. Built for real-world scale: transactional order processing prevents overselling, per-seller order tracking handles multi-vendor carts, and built-in buyer-seller chat plus a complaint system keep every transaction accountable.',
+    tech: [skillsData[3], skillsData[6], skillsData[12], skillsData[4], skillsData[11]],
+    accentColor: '#4570a8',    
+    demoVideo: '/videos/Tradezy.mp4',
+    repoUrl: 'https://github.com/ilyas206/marketplace',
+    screenshot: project3,    
   }
 ]
