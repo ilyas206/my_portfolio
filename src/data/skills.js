@@ -17,4 +17,5 @@ export const skillsData = [
     { name: 'GitHub',      icon: 'devicon-github-original' }, // 15 
     { name: 'VS Code',     icon: 'devicon-vscode-plain' }, // 16
     { name: 'Postman',     icon: 'devicon-postman-plain' }, // 17
+    { name: 'WordPress',     icon: 'devicon-wordpress-plain' }, // 18
 ]

@@ -2,6 +2,7 @@ import { skillsData } from "./skills";
 import project1 from '../assets/images/project1.png';
 import project2 from '../assets/images/project2.png';
 import project3 from '../assets/images/project3.png';
+import project4 from '../assets/images/project4.png';
 
 export const projectsData = [
   {
@@ -33,5 +34,15 @@ export const projectsData = [
     demoVideo: '/videos/Tradezy.mp4',
     repoUrl: 'https://github.com/ilyas206/marketplace',
     screenshot: project3,    
+  },
+  {
+    title: 'Timizar | High Atlas Heritage Guide',
+    description:
+      'Timizar is a cultural travel guide to the villages, traditions, and landscapes of Al-Haouz in the High Atlas, Morocco. It solves the problem of finding well-organized information about Amazigh heritage and mountain destinations, which is often scattered or missing from mainstream travel sites. Built for travelers and learners who want to explore the High Atlas respectfully, it brings together village profiles, key places to visit, practical travel guidance, and cultural context in one clean WordPress site.',
+    tech: [skillsData[18], skillsData[5]],
+    accentColor: '#1a965e',    
+    demoVideo: '/videos/Timizar.mp4',
+    repoUrl: null,
+    screenshot: project4,    
   }
 ]

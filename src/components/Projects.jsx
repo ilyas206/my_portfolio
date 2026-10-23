@@ -112,7 +112,8 @@ function ProjectCard({ title, description, tech, accentColor, demoVideo, repoUrl
                   </span>
                 </span>
             </FillButton>
-            <FillButton buttonClass='group' href={repoUrl} target="_blank" rel="noopener noreferrer" paddingX='8px' paddingY='8px' fillColor={accentColor} textColor="#0a0a0a" borderColor={accentColor}>
+            {
+              repoUrl && <FillButton buttonClass='group' href={repoUrl} target="_blank" rel="noopener noreferrer" paddingX='8px' paddingY='8px' fillColor={accentColor} textColor="#0a0a0a" borderColor={accentColor}>
                 <span className="flex items-center gap-2 overflow-hidden">
                   <i className="transition-transform duration-300 group-hover:translate-x-23 devicon-github-original" />
                   <span className="transition-transform duration-300 group-hover:-translate-x-5">
@@ -120,6 +121,7 @@ function ProjectCard({ title, description, tech, accentColor, demoVideo, repoUrl
                   </span>
                 </span>
             </FillButton>
+            }
           </div>
         </div>
 
