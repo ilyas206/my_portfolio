@@ -1,6 +1,6 @@
 export const educationData = [
   {
-    degree: 'Baccalauréat',
+    degree: 'Baccalaureate',
     field: 'Physical Sciences — French Track (BIOF)',
     institution: 'High school OUM ELBANIN',
     location: 'Casablanca, Morocco',

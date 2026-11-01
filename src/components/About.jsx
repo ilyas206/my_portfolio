@@ -66,7 +66,7 @@ export default function About() {
             <p className="text-base md:text-lg text-center md:text-start leading-relaxed max-w-lg text-(--text-secondary)">
               I'm{' '}
               <span className="font-semibold text-(--accent)">Ilyas AIT IDIR</span>
-              {' '}— a Computer Engineering graduate of my 3rd year, with a sharp focus on
+              {' '}— a Computer Engineering graduate with a sharp focus on
               full-stack web development. I don't just connect a frontend to a backend —
               I build{' '}
               <span className="font-semibold text-(--text-primary)">structured</span>,{' '}
@@ -75,7 +75,11 @@ export default function About() {
               <span className="font-semibold text-(--accent)">React</span> for interfaces that feel right,{' '}
               <span className="font-semibold text-(--accent)">Laravel</span> for backends that scale,
               and <span className="font-semibold text-(--text-primary)">clean architecture</span>{' '}
-              as a non-negotiable standard — not an afterthought.
+              as a non-negotiable standard , not an afterthought. I also work with <span className="font-semibold text-(--accent)">WordPress</span> and <span className="font-semibold text-(--accent)">Elementor</span> {' '}
+              when a project calls for a fast, content-driven site, and I bring the same discipline to it : {' '} 
+              <span className="font-semibold text-(--text-primary)">clean structure</span>,{' '}
+              <span className="font-semibold text-(--text-primary)">careful customization</span>, and {' '}
+              <span className="font-semibold text-(--text-primary)">no unnecessary bloat</span>.
             </p>
 
             {/* Quick info */}
