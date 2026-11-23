@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import resumePDF from '../assets/resume.pdf'
-import profile from '../assets/images/profile.png'
+import profile from '../assets/images/profile.jfif'
 import { Download, MapPin, GraduationCap, Briefcase } from 'lucide-react'
 import FillButton from './FillButton'
 
